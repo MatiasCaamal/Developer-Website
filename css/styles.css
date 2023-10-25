@@ -22,12 +22,22 @@
     font-family: Arial, Helvetica, sans-serif;
   }
   
-  .barra {
-    background-color: #218114;
+  .contenedor{
+    width: 120rem;
+    margin: 0 auto;
+  }
+
+  .nav-bg{
+      
+  }
+
+
+  .navegacion-principal {
+    background-color: var(--secundario);
     padding: 10px 10px;
   }
   
-  .barra a {
+  .navegacion-principal a {
     margin-left: 100px;
     margin-right: 100px; /* Ajusta el valor según tus necesidades para aumentar el margen entre opciones */
     display:inline-block;
