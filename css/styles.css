@@ -11,11 +11,20 @@
     font-size: 62.5%;
     font-family: 'Krub', sans-serif;
     box-sizing: border-box; /* Hack para el modelo de box model */
-    background-image: linear-gradient(to top, var(--blanco) 0%, var(--grisClaro) 100%);
+    background-image: linear-gradient(to top, var(--blanco) 0%, var(--grisClaro) 100%); /* Degradado */
+    scroll-snap-type: y mandatory;
   }
 
   *, *:before, *:after{
     box-sizing: inherit;
+  }
+
+  /* Scroll snap */
+  .titulo,
+  .servicios-heading,
+  .contacto-heading {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
   }
   
   body {
@@ -62,6 +71,19 @@
   .contenedor{
     max-width: 120rem;
     margin: 0 auto;
+  }
+
+  .w-sm-100 {
+    width: 100%;
+  }
+  
+  
+  .flex {
+    display: flex;
+  }
+  
+  .alinear-derecha {
+    justify-content: flex-end;
   }
 
   .nav-bg{
@@ -132,6 +154,11 @@
   text-transform: uppercase; /* Poner texto en masyúsculas */
   text-align: center; /* Alinear todo al centro */
   width: 90%; /* Ancho del botón que abarque el 90% si la pantalla es pequeña */
+  border: none;
+}
+
+.boton:hover {
+  cursor: pointer;
 }
 
 /* SERVICIOS */
@@ -142,6 +169,61 @@
   grid-template-columns: repeat(3, 1fr );
   column-gap: 1rem; /* distancia entre columnas */
 }
+
+.formulario {
+  background-color: var(--gris);
+  width: min(60rem, 100%);
+  margin: auto;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.formulario fieldset {
+  border: none;
+}
+
+.formulario legend {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  color: var(--primario)
+}
+
+.contenedor-campos {
+
+}
+
+.campo {
+  margin-bottom: 1rem;
+}
+
+.campo label {
+  color: var(--blanco);
+  font-weight: bold;
+  margin-bottom: .5rem;
+  display: block; /* Hace que cada label tome todo el espacio disponible y esté separado del input */
+}
+
+.input-text {
+  width: 100%;
+  border: none;
+  padding: 1.5rem;
+  border-radius: .5rem;
+}
+
+.campo textarea {
+  height: 20rem;
+}
+
+
+
+/* Footer */
+.footer {
+  text-align: center; /* Para centrar el texto del footer */
+}
+
 
 
 
@@ -169,7 +251,7 @@
   .servicio {
     display: flex;
     flex-direction: column;
-    text-align: center;
+    align-items: center;
   }
   
   .servicio h3 {
@@ -189,9 +271,24 @@
     border-radius: 50%;
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
-    
+    align-items: center;    
   } 
+
+  .w-sm-100 {
+    width: auto;
+  }
+
+  .contenedor-campos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+    grid-template-rows: auto auto 20rem;
+  }
+
+  .campo:nth-child(3),
+  .campo:nth-child(4){
+    grid-column: 1/3;
+  }
 
 }
 
