@@ -234,7 +234,7 @@
 
   .navegacion-principal{
     flex-direction: row;
-  }
+  } 
 
   .boton {
     width: auto;
@@ -291,5 +291,7 @@
   }
 
 }
+
+
 
 
